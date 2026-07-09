@@ -1,0 +1,24 @@
+{
+  "name": "landing-live-stream",
+  "version": "1.0.0",
+  "description": "landing page",
+  "homepage": "https://github.com/irsav/landing_live_steaming#readme",
+  "bugs": {
+    "url": "https://github.com/irsav/landing_live_steaming/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/irsav/landing_live_steaming.git"
+  },
+  "license": "ISC",
+  "author": "Vlad",
+  "type": "commonjs",
+  "source": "index.html",
+  "scripts": {
+    "sass:watch": "sass --style=expanded --watch styles:dist"
+  },
+  "devDependencies": {
+    "parcel": "^2.16.4",
+    "sass": "^1.101.0"
+  }
+}
