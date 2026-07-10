@@ -7,6 +7,13 @@
     }
 }
 
+%hover-light {
+    &:hover {
+        color: v.$color_white;
+        transition: color .25s;
+    }
+}
+
 %hover-black-icon {
     &:hover {
         fill: v.$color-black;

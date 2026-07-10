@@ -6,5 +6,25 @@
     flex-direction: $direction;
     column-gap: $column-gap;
     row-gap: $row-gap;
-    white-space: $w-space;
+}
+
+@mixin position($type: relative, $zIndex: 1, $inset: -1, $top-or-bottom: top, $left-or-right: left, $value1: 0, $value2: 0) {
+    position: $type;
+    z-index: $zIndex;
+
+    @if $inset > -1 {
+        inset: $inset;
+    }
+    @else {
+        #{$top-or-bottom}: $value1;
+        #{$left-or-right}: $value2;
+    }
+}
+
+@mixin font($size: 16px, $weight: 400, $color: #fff) {
+    font: {
+        size: $size;
+        weight: $weight;
+    }
+    color: $color;
 }
