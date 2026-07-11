@@ -1,0 +1,107 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+@use 'placeholders';
+@use 'sass:color';
+
+.work-section {
+
+    padding-top: 122px;
+
+    @media (max-width: v.$media_sm) {
+            padding: 0;
+        }
+
+    .work {
+        @include m.d-flex(start, center, nowrap, column);
+    }
+
+    .work__title {
+        @include m.font(60px, 400, v.$color_white);
+
+        @media (max-width: v.$media_sm) {
+            display: none;
+        }
+    }
+
+    .work__cards-wrapper {
+        margin: 81px auto;
+        padding: 0 10px 0;
+        max-width: 950px;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 180px);
+        grid-template-rows: repeat(2, 1fr);
+        justify-content: space-between;
+        row-gap: 68px;
+
+        .work__card {
+            width: 180px;
+            height: 195px;
+            background-color: color.adjust(v.$color_white, $alpha: -0.85);
+            border-radius: 20px;
+            padding: 25px 10px 18px;
+            @include m.d-flex(start, center, nowrap, column, 0, 10px);
+
+            &:hover {
+                box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.1);
+                cursor: pointer;
+
+                .work__card-icon, .work__card-title, .work__card-desc {
+                    fill: v.$color_white;
+                    color: v.$color_white;
+                }
+            }
+
+            &-icon {
+                width: 50px;
+                height: 40px;
+                fill: v.$color-black;
+            }
+
+            &-title {
+                font-weight: 500;
+                font-size: 18px;
+            }
+            
+            &-desc {
+                @include m.font(16px, 300, v.$color_black);
+                text-align: center;
+            }
+
+        }
+
+        @media (max-width: v.$media_sm) {
+                grid-template-columns: repeat(2, 140px);
+                grid-template-rows: repeat(3, 153px);
+                justify-content: space-around;
+                column-gap: 30px;
+                row-gap: 35px;
+                padding: 0 20px 0;
+                margin: 40px;
+
+                .work__card {
+                    width: 140px;
+                    height: 153px;
+                    padding-bottom: 11px;
+
+                    &-desc {
+                        font-size: 11px;
+                    }
+
+                    &-title {
+                        font-size: 14px;
+                    }
+
+                    &-icon {
+                        width: 40px;
+                        height: 25px;
+                    }
+                }
+
+            }
+        
+        .card__integration {
+                padding-bottom: 0;
+            }
+    }
+}

@@ -7,7 +7,6 @@
 .hero {
     position: relative;
     max-width: 1260px;
-    height: 830px;
     margin: 0 auto;
     padding: 140px 0 0 0;
     background: url('../assets/sky1.webp') center/contain no-repeat;
@@ -159,6 +158,10 @@
             padding: 15px 0 15px
             }
         }
+
+        @media (max-width: v.$media_sm) {
+            margin: 0 auto;
+        }
     }
 
     &__scroll {
@@ -185,7 +188,7 @@
             @include m.position(absolute, 1, -1, bottom, left, 70px, 7px);
         }
         @media (max-width: v.$media_md) {
-            @include m.position(absolute, 1, -1, bottom, left, 350px, 7px);
+            @include m.position(absolute, 1, -1, bottom, left, 50px, 7px);
         }
     }
 
